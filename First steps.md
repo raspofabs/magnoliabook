@@ -1,15 +1,15 @@
 # First steps
 
-We're going to take one of the example sketches that comes with the arduino software and adjust it to match the Magnolia. The main thing to take from this lesson is that there is no pin 13 on the Magnolia, only analog pins, namely A0 - A5.
+We're going to take one of the example sketches that comes with the arduino software and adjust it to match the Magnolia. The main thing to take from this lesson is that there is no pin **13** on the Magnolia, only analog pins, namely **A0** - **A5**.
 
 Basic setup
 ----------
 
 Set up your magnolia by connecting the FTDI to the board, then connect the USB cable to the FTDI thingy.
 
-Take an LED and stick the legs in GND and VCC. Take note of what the LED looks like, and which way round it goes, they only work one way round. Normally, the long leg is positive, or anode. Inside the casing, you can see the larger part is attached to the shorter leg (the big metal inside is the negative or cathode).
+Take an LED and stick the legs in **GND** and **VCC**. Take note of what the LED looks like, and which way round it goes, they only work one way round. Normally, the long leg is positive, or *anode*. Inside the casing, you can see the larger part is attached to the shorter leg. The big metal inside is the negative or *cathode*.
 
-You're now ready to pull those legs apart and put the positive (anode) into one of the unmarked slots on the Magnolia. The slots without legend (markings) are the same as the analogue input pins on a regular Arduino. A0 is the pin nearest the markings for GND and VCC, A5 is the other end.
+You're now ready to pull those legs apart and put the positive (anode) into one of the unmarked slots on the Magnolia. The slots without legend (markings) are the same as the analogue input pins on a regular Arduino. **A0** is the pin nearest the markings for **GND** and **VCC**, **A5** is the other end.
 
     GND VCC A5
     GND VCC A4

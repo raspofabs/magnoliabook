@@ -14,7 +14,7 @@ In addition to the Magnolia, you're going to need a 5V happy LED. A lot of 3V+ L
 Software
 -----
 
-You're going to need to download the arduino IDE software from http://www.arduino.it
+You're going to need to download the arduino IDE software from [Arduino.cc](http://arduino.cc/en/Main/Software)
 
 Once you have that, you need to plug the FTDI into your computer to find out what you need to do tto fixup any driver issues with talking to serial tty devices.
 
