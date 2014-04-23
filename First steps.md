@@ -18,7 +18,7 @@ You're now ready to pull those legs apart and put the positive (anode) into one 
     GND VCC A1
     GND VCC A0
 
-If you drop the anode into A0 and the cathode into one of the GND pins (any, they are all the same), then the LED should not be lit up (unless it's blinking, in which case someone has already set up the A0 blink sketch on this board)
+If you drop the anode into **A0** and the cathode into one of the **GND** pins (any, they are all the same), then the LED should not be lit up (unless it's blinking, in which case someone has already set up the **A0** blink sketch on this board)
 
 Modifying an example
 ----
