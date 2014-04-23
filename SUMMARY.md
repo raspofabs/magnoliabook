@@ -4,6 +4,6 @@
 * [First steps](First steps.md)
 * [Multiple lights](Multiple lights.md)
 * [Buttons](Buttons.md)
-* Serial output
-* Serial input
+* [Serial output](Serial output.md)
+* [Serial input](Serial input.md)
 
