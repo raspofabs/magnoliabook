@@ -2,8 +2,6 @@
 
 To make interactive things, you need inputs. The most basic of which is a simple push button. This lesson shows you how to add a button, read its value, and react to it. In addition, we're going to learn an important lesson about circuits.
 
-![button](button_circuit.png)
-
 ## The code
 
 Firstly, we again start with the modified blink sketch. We will modify the first section:
@@ -48,6 +46,8 @@ If we connected the output side of the button to **GND** the LED would stay off 
 The solution is to make te **GND** connected to the output side of the button, but in such a way that it doesn't matter if we press the button. To do this, we add a rather high valued resistor. Usually, anything over 2kOhms will do, I prefer 470kOhm just to be sure I'm not wasting juice on the *pulldown resistor*.
 
 So, you wire up the circuit **VCC** to button in, button out to **A1**, but also button out, via *pulldown resistor* to **GND**. Now, when you run the program, the LED does not turn on randomly.
+
+![button](button_circuit.png)
 
 ## What we need to learn from this
 

@@ -6,16 +6,18 @@ Sometimes you need to command the Magnolia to do something from the PC. If you d
 
 Just like in writing, before you can communicate, the Magnolia needs `Serial.begin()` to be called.
 
-Instead of `Serial.write` we're going to call `Serial.read`, which returns the number of bytes (characters) read into the space you gave it.
+Instead of `Serial.write` we're going to call `Serial.read`, which returns either a character, or -1 if there is nothing to read.
 
-To test it out, add to your `loop()`
+To test it out, add this to your `loop()`
 
-    char inBuffer[32] = {0};
-    int bytesRead = Serial.read(inBuffer,32);
-    Serial.print( "Recvd [" );
-    Serial.print( inBuffer );
-    Serial.print( "]" );
-    Serial.print( bytesRead );
-    Serial.println( "bytes" );
+    int inchar = Serial.read();
+    if( inchar != -1 )
+    {
+        Serial.print( "Recvd [" );
+        Serial.print( inchar );
+        Serial.print( "] = \"" );
+        Serial.write( inchar );
+        Serial.println( "\"" );
+    }
 
 And then upload.
