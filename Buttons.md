@@ -2,6 +2,8 @@
 
 To make interactive things, you need inputs. The most basic of which is a simple push button. This lesson shows you how to add a button, read its value, and react to it. In addition, we're going to learn an important lesson about circuits.
 
+![button](button_circuit.png)
+
 ## The code
 
 Firstly, we again start with the modified blink sketch. We will modify the first section:
