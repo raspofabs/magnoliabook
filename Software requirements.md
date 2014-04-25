@@ -12,11 +12,17 @@ In addition to the Magnolia, you're going to need a 5V happy LED. A lot of 3V+ L
 
 ## Software
 
-You're going to need to download the arduino IDE software from [Arduino.cc](http://arduino.cc/en/Main/Software)
+You're going to need to download and install the arduino IDE software from [Arduino.cc](http://arduino.cc/en/Main/Software)
 
 Once you have that, you need to plug the FTDI into your computer to find out what you need to do tto fixup any driver issues with talking to serial tty devices.
 
-Windows 7 needs to use drivers that come with the arduino software.
+Windows 7 needs to use drivers that come with the arduino software. If they are not installed correctly on first attempt, then try these steps.
+* open windows device manager
+* look for FTDI / USB Serial / FTRS232 something like that with a warning icon
+* reinstall the driver, browse to where arduino installed (C:\program files (x86)\arduino\drivers\\...)
+* Sometimes you will need to do this for two devices, not just the one, and the second one doesn't turn up until the first one has working drivers.
 
 Linux needs to set your user as permitted to talk to tty and dialout.
+* sudo usermod -a -G dialout <username>
+* sudo usermod -a -G tty <username>
 
