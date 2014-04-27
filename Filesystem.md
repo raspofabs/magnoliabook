@@ -1,6 +1,6 @@
 # Filesystem
 
-The ATMega328p doesn't have a hard drive attached, and even plugging in an SDCARD is a small project of its own, but the little microcontroller does have a very small amount of storage in the form of EEPROM, Electronically Erasable, Programmable Read-only memory. 512 bytes to be precise.
+The ATMega328p doesn't have a hard drive attached, and even plugging in an SDCARD is a small project of its own, but the little microcontroller does have a very small amount of storage in the form of EEPROM, Electronically Erasable, Programmable Read-only memory. 1024 bytes to be precise.
 
 We can use this to store something that is meant to survive across power outages. We will use it to store the number of times the Magnolia has been booted up. Useless, but a good starting point for any ideas you might have as it includes reading and writing.
 
@@ -57,4 +57,4 @@ Now, when you upload, the first thing it will do is flash the number of times th
 
 ## Take away
 
-There is a place to store data that you need between power failures, but it's very limited, only 512 bytes. That's not enough for a desktop icon (they are normally at least 4k).
+There is a place to store data that you need between power failures, but it's very limited, only 1024 bytes. That's not enough for a desktop icon (they are normally at least 4k).
