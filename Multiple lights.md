@@ -2,6 +2,8 @@
 
 Adding more is the next step. We're going to go over what you need to do to modify and extend an Arduino sketch.
 
+## The code
+
 reopen and modify the blink sketch like you did in lesson 1 if you have shut down the IDE, then where it now says
 
     int led = A0;
@@ -39,12 +41,14 @@ to this:
 
 Notice we don't add a delay between setting `led` to `LOW` and setting `led2` to `HIGH`. This is because we want the second LED to light up as soon as the first one has gone out, making it look like the light is moving from one LED to another.
 
-Wiring
-----
+## Wiring
 
 Add another two LEDs with their anodes (positive legs) in **A1** and **A2**. Upload the sketch and you should see the three LEDs light up in sequence.
 
-The important bits
-------
+## The take-away
 
 Whenever you add a new output to your sketch, you need to make sure you set the `pinMode` for the pin you are going to be using. Usually, you want to setup some `int` values for the pins so it is a little easier to know what each pin is for. You have to use `digitalWrite` to set whether the pin is outputting a **GND** (`LOW`) or **VCC** (`HIGH`) value.
+
+## Finally
+
+We're limited to only having 6 LEDs when powering them directly from the pins. There are a number of different ways around this limit, but the one we will be exploring later involves adding another chip to the setup, a shift register, and that will let us power 8 (or even more) LEDs from only three pins.

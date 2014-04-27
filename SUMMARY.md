@@ -6,4 +6,8 @@
 * [Buttons](Buttons.md)
 * [Serial output](Serial output.md)
 * [Serial input](Serial input.md)
+* [Analogue Input](Analogue Input.md)
+* Shift Registers
+* Servos
+* Filesystem
 

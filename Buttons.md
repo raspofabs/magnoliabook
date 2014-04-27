@@ -70,3 +70,7 @@ Now, when you run the program, the LED does not turn on and off randomly.
 Using switches can cause gaps in your circuits, so you need to make sure you have a circuit all the time, no dangling wires that go no-where. There are two ways to fix dangling wires on switches, the first is to use a `pulldown resistor`, like we did above. Doing this means that at no point is the input pin left unconnectd.
 
 The second method is to use the other input mode of the chip, namely `INPUT_PULLUP`. In this mode things are a bit backward, you will want to connect the switch between the `INPUT_PULLUP` pin, and the **GND**. When the button is pressed, the button will drain causing a change in state for `digitalRead( ... )` on the input pin.
+
+## Finally
+
+Like with the limited resources stopping us from having more LEDs, you'll find that the Magnolia having only 6 IO ports makes having more than 6 buttons a very difficult thing. We can solve this problem too, but that will come in a later lesson about shift-in registers. These convert parallel data into serial data, meaning you can read from 8 inputs at once, using only three pins, just like you did with the shift register for extending the number of outputs.
