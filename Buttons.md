@@ -75,6 +75,8 @@ The second method is to use the other input mode of the chip, namely `INPUT_PULL
 
 Start by thinking of **A0** as being able to read the voltage difference between **GND** and whatever is plugged into it.
 
+If you plug **A0** directly into **GND** then it will be measuring the voltage (potential difference) between **GND** and **GND**. This is zero.
+
 ## Finally
 
 Like with the limited resources stopping us from having more LEDs, you'll find that the Magnolia having only 6 IO ports makes having more than 6 buttons a very difficult thing. We can solve this problem too, but that will come in a later lesson about shift-in registers. These convert parallel data into serial data, meaning you can read from 8 inputs at once, using only three pins, just like you did with the shift register for extending the number of outputs.
