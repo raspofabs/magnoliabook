@@ -7,10 +7,11 @@ In addition to the Magnolia, you're going to need a 5V happy LED. A lot of 3V+ L
 * a whole bunch of LEDs
 * resistors (100Ohm, 2kOhm and 4kOhm)
 * prototyping board (optional, but really useful) and jumper cables.
-* 8-bit shift register
+* 8-bit shift register (HC595)
 * photoresistor (light sensitive resistor)
 * hobby servo
 * piezo or other low resistance speaker
+* 8-bit Parallel to serial (shift in) (CD4021)
 
 ## Software
 
