@@ -50,7 +50,7 @@ Now try the example. The LED light should be flashing. If you cover the photores
 
 ## Why ground?
 
-If we ground with different values, the photoresistor will become sensitive to different levels of light. This is because the grounding resistance pairs with the photoresistor resistance to create a voltage divider.
+If we ground with different values of resistor, the photoresistor will become sensitive to different levels of light. High value resistances make it less sensitve, allowing for sunlight levels. Low value resistances make it more sensitive, meaning you can detect low light level differences. This is because the grounding resistance pairs with the photoresistor resistance to create a voltage divider.
 
 In a circuit, the current is the same the whole circuit around, but the voltage on the other hand, is not. Voltage is a measurement of potential difference, and a really obvious example is how we can add multiple batteries in a line to increase the voltage.
 
