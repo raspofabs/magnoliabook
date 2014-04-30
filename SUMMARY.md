@@ -8,6 +8,7 @@
 * [Serial input](Serial input.md)
 * [Analogue Input](Analogue Input.md)
 * [Filesystem](Filesystem.md)
+* [Servos](Servos.md)
 * [Shift Registers](Shift Registers.md)
-* Servos
+* [Multiple Inputs](Multiple Inputs.md)
 
