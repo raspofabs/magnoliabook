@@ -103,6 +103,8 @@ Insert all your LEDs anode by the chip. All the cathodes should link to one of t
 
 Upload!
 
+![button](ShiftReg_bb.png)
+
 ## More outputs
 
 Pin 9 is high when Qh' is high. This means that if there are two chips, then chip 1 Qh' can be attached to chip 2 **SER**, The **SRCLK** and **RCLK** can be wired common, then you have a 16bit shift-register. This sequence of adding more chips eventually runs out of juice, but not so quickly that it matters for most hobby projects.
