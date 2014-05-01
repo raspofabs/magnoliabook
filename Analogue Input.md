@@ -23,13 +23,17 @@ Then we need to read the value before we use it in the loop function.
     void loop()
     {
         int value = analogRead(photo);
+
+        // turn the light on for a bit
         digitalWrite(led,HIGH);
-        delay( (1024-value) / 4 );
+        delay( 10 );
+
+        // off time depends on value
         digitalWrite(led,LOW);
-        delay( value/4 );
+        delay( value );
     }
 
-Note, the smaller `value` is, the more time the LED will be on for.
+Note, the smaller `value` is, the shorter the delay, and this the faster the LED will flash.
 
 ## Wiring
 
@@ -37,6 +41,7 @@ We need to wire up the LED for output, but also the photoresistor for input. Lik
 
 Put the photoresistor in the board and temporarily give the legs names **PH0** and **PH1**. Add a 2kOhm resistor to the board. Name the resistor legs **R0** and **R1**.
 
+* *The resistor value is quite important, make sure it's around the 2000 Ohm range for this wiring up. (your kit has a 2k7Ohm)*
 * **VCC** to **PH0**
 * **PH1** to **R0**
 * **PH1** to **A1**
