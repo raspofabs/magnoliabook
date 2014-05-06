@@ -8,6 +8,7 @@
 * [Serial output](Serial output.md)
 * [Serial input](Serial input.md)
 * [Analogue Input](Analogue Input.md)
+    * [Photoresistors](Photoresistors.md)
     * [Voltage dividers](Voltage dividers.md)
 * [Filesystem](Filesystem.md)
 * [Servos](Servos.md)

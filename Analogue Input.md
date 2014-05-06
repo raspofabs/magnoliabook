@@ -8,21 +8,23 @@ Before we get to the code, an important thing to remember. Unlike digitalRead an
 
 ## The code
 
-We're going to be doing a nice and reactive example that uses the photoresistor. Set up a pin for the resistor like this.
+We're going to be doing a nice and reactive example that uses a potentiometer. Set up a pin for the pot middle pin like this.
 
     int led = A0;
-    int photo = A2;
+    int pot = A1;
 
     void setup()
     {
         pinMode(led, OUTPUT);
     }
 
-Then we need to read the value before we use it in the loop function.
+Notice we don't set up the input pin. By default, all ATMega328P pins are in input state. You can do it explicitly if you wish (add `pinMode(pot, INPUT);` to `setup()`).
+
+Then we need to read the value before we use it in the loop function. Note that value is a *local* variable, that is, it is created every time the loop function is called. With local variables, we have to explicitely initialise them. In this case, we declare the variable `value` as an `int` then give it a value from `analogRead` straight away.
 
     void loop()
     {
-        int value = analogRead(photo);
+        int value = analogRead(pot);
 
         // turn the light on for a bit
         digitalWrite(led,HIGH);
@@ -37,29 +39,25 @@ Note, the smaller `value` is, the shorter the delay, and this the faster the LED
 
 ## Wiring
 
-We need to wire up the LED for output, but also the photoresistor for input. Like with the button, we're going to ground the input line, but this time for a slightly different reason. Voltage across resistors is based on their resistance, and we will use that to make the input pin receive a differing voltage over different brightness reaching the photoresistor. First we wire up, then explain.
+We need to wire up the LED for output, and the potentiometer for input. Like with the button, we're going to ground the input line, but this time in different way.
 
-Put the photoresistor in the board and temporarily give the legs names **PH0** and **PH1**. Add a 2kOhm resistor to the board. Name the resistor legs **R0** and **R1**.
+Put the potentiometer in the board and temporarily give the legs names **PLEFT**, **PMID** and **PRIGHT**.
 
-* *The resistor value is quite important, make sure it's around the 2000 Ohm range for this wiring up. (your kit has a 2k7Ohm)*
-* **VCC** to **PH0**
-* **PH1** to **R0**
-* **PH1** to **A1**
-* **R1** to **GND**
+* **PLEFT** to **VCC**
+* **PRIGHT** to **GND**
+* **PMID** to **A1**
 * **GND** to LED cathode (neg)
 * **A0** to LED anode (pos)
 
 ## Running
 
-Now try the example. The LED light should be flashing. If you cover the photoresistor, the amount of time the LED is on for per cycle will increase.
+Now try the example. The LED light should be flashing. If you turn the knob, the amount of time the LED is on for per cycle will change. Move the knob towards the left pin, and the `analogRead` will return a smaller value, around 0, so the light will be on most of the time. Turn the knob towards the right pin, and `analogRead` will return a large value, around the maximum of 1023, and the delay will cause the led to blink about once a second.
 
-## Why ground?
-
-If we ground with different values of resistor, the photoresistor will become sensitive to different levels of light. High value resistances make it less sensitve, allowing for sunlight levels. Low value resistances make it more sensitive, meaning you can detect low light level differences. This is because the grounding resistance pairs with the photoresistor resistance to create a voltage divider.
+## Why three wires?
 
 This is how we make inputs work with potentiometers (sliders and knobs, and other variable resistors). We ground one side, power the other, then catch a voltage off the middle pin.
 
-If you have a unpredictable analogue input (such as a photoresistor) you can add a variable resistor to the mix so you can tweak the lower and upper range, effectively giving you a hardware trimming. To do this, attach **VCC** to the live end of the variable resistor, and then attach the **R1** to the middle pin of the variable resistor. This way you can adjust the resistance opposing the photoresistor to fine tune the sensitivity.
+What's really happening is that the potentiometer is acting as a dynamic pair of resistors, and they are doing a voltage division. This means that they are splitting the voltage between them by how much resistance each side of the middle pin has. The middle pin acts as a pointer to a continuum of different voltages between the left and right legs. When the middle is all the way over one side, that side has very little resistance, so ends up taking up a very small amount of the voltage. Meaning the middle has a value very similar to the side it is nearest to.
 
 ## Take away
 
