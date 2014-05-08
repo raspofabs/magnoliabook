@@ -32,4 +32,4 @@ As soon as you connect **SIG** to **A0**, the servo should rush to wherever it i
 
 ## Where to go?
 
-You could try combining the light sensor lesson with the servo, and have the servo react to light levels.
+You could try combining the analogue input lessons with the servo, and have the servo react to the potentiometer, or light levels.
