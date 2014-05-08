@@ -17,6 +17,12 @@ The shift register we are going to use is called the **HC595**, and the one in y
 
 The **HC595** has a 16 pins, 8 are outputs, the rest are **VCC**, **GND**, or other IO pins to control the chip. We will be using all eight output pins that are meant to be the parallel output to power our LEDs. To drive those outputs we will be connecting to the data and clock line for the internal registers, and pushing the internal registers to the output pins with the register clock. We're going to be hard wiring the enable and clear pins and not using the chaining pin to start with.
 
+To start with, let's declare our pins:
+
+    int SER = A0;
+    int SRCLK = A1;
+    int RCLK = A2;
+
 When using chips with clock lines, we usually find they are triggered by positive-edge. This means the line transitions from a `LOW` to a `HIGH`. We'll start by adding this function to the top of our sketch so the main code can call it.
 
     void trigger( int pin )
@@ -61,10 +67,6 @@ Often we will use binary to feed into shift registers, so we will do that and wr
     }
 
 This function can now be used by our main loop and setup code.
-
-    int SER = A0;
-    int SRCLK = A1;
-    int RCLK = A2;
 
     void setup()
     {
