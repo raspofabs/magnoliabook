@@ -52,10 +52,10 @@ Often we will use binary to feed into shift registers, so we will do that and wr
         for( int i = 0; i < 8; ++i )
         {
             // send only the lowest bit
-            put_one( val & 1 );
+            put_one( bits & 1 );
 
             // move the next highest bit down
-            val >>= 1;
+            bits >>= 1;
         }
         trigger(RCLK); // move Q' into Q
     }
@@ -95,11 +95,11 @@ Place your shift register with the little dimple near the top, but a few rows do
 
 To hard wire the chip as enabled, wire **GND** to pin 13 (three down from **VCC**). To stop the chip from self clearing, power **SRCLR** with **VCC**. **SRCLR** is pin 10, one up from bottom right.
 
-Take three long leads and connect **SER** (pin 14) to **A0**, **SRCLK** (pin 12) to **A1**, and **RCLK** (pin 11) to **A2**.
+Take three long leads and connect **SER** (pin 14) to **A0**, **SRCLK** (pin 11) to **A1**, and **RCLK** (pin 12) to **A2**.
 
 Take a jumper and jump between Qa (pin 15), and the row above Qb. This is so you can have all your LEDs plugged straight into the 8 rows starting above Qb.
 
-Insert all your LEDs anode by the chip. All the cathodes should link to one of the two remaining rails. This rail will have a 2k resistor just to make sure the overall current drop doesn't drain the Magnolia. The 2k resistor should then be linked to **GND**.
+Insert all your LEDs anode by the chip. All the cathodes should link to one of the two remaining rails. This rail will have a 2k7 resistor just to make sure the overall current drop doesn't drain the Magnolia. The 2k7 resistor should then be linked to **GND**.
 
 Upload!
 
